@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!-- language and country code -->
+<html lang="en-US">
+
+<head>
+<title>ESAM prelim preparation Calculus</title>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+
+
+<!-- css style -->
+<style>
+    p {
+        font-family: 'Courier New', Courier, monospace;
+    }
+    a:link {
+        color: green;
+        background-color: transparent;
+        text-decoration: none;
+    }
+    a:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: underline;
+        background-color: none;
+    }
+    .hidden {
+        display: none;
+    }
+    .solution-button {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #04AA6D;
+        padding: 3px 30px;
+    }
+    .solution-button:hover {
+    background-color: #04AA6D;
+    color: white;
+    }
+    .warning-button {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #aa4404;
+        padding: 3px 30px;
+        display: none;
+    }
+    .warning-button:hover {
+    background-color: #aa4404;
+    color: white;
+    }
+</style>
+<!-- background color -->
+<body style="background-color:beige;">
+<body>
+
+<!-- Heading -->
+<h1>
+    Calculus
+</h1>
+<a href="front.html">(Back home)</a>
+
+<p id="calc23">2023</p>
+<!-- click "calc23" to show all calc23 problems "calc23_p1" through "calc23_p7" -->
+<div id="calc23_p1" class="hidden">
+    <h2>
+        Calc 2023 Problem 1 (5pts)
+    </h2>
+    Consider \(z=z(x,y)\) defined implicitly via \(F(\frac{z}{x},\frac{y}{x})=0\). Show that
+    \begin{align*}
+    x\frac{\partial z}{\partial x} + y\frac{\partial z}{\partial y} &= z
+    \end{align*}
+    <button id="calc23_p1_b1" class="solution-button"> Let me check the solution for you.</button>
+    <button id="calc23_p1_b2" class="solution-button"> I want to see the solution step-by-step</button>
+    <!-- click the button "calc23_p1_b2" to show the next step "calc23_p1_2" and the ... button "calc23_p1_b3"--> 
+    <p id="calc23_p1_2" class="hidden">
+        Step 1: Notice the \(\frac{\partial z}{\partial x}\) and \(\frac{\partial z}{\partial y}\) in the problem, we want to take derivatives of \(F(\frac{z}{x},\frac{y}{x})\) to obtain relations on those terms. <br>
+        \begin{align}
+        \frac{\partial F}{\partial x} &= \frac{\partial F}{\partial u}\frac{\partial u}{\partial x} + \frac{\partial F}{\partial v}\frac{\partial v}{\partial x} 
+        \\&= \frac{\partial F}{\partial u}\left(\frac{\partial z}{\partial x}\cdot\frac{1}{x}-z\cdot\frac{1}{x^2}\right) + \frac{\partial F}{\partial v}\left(-\frac{y}{x^2}\right)
+        \\\frac{\partial F}{\partial y} &= \frac{\partial F}{\partial u}\frac{\partial u}{\partial y} + \frac{\partial F}{\partial v}\frac{\partial v}{\partial y} 
+        \\&= \frac{\partial F}{\partial u}\left(\frac{\partial z}{\partial y}\cdot\frac{1}{x}\right) + \frac{\partial F}{\partial v}\left(\frac{1}{x}\right)
+        \end{align}
+    </p>
+    <!-- cut: click "calc23_p1_b3" to show "calc23_p1_3" and "calc23_p1_b4"-->
+    <p id="calc23_p1_b3" class="hidden">
+        (...)
+    </p>
+    <p id="calc23_p1_3" class="hidden">
+        Step 2: Since \(F(\frac{z}{x},\frac{y}{x})\) is a constant on \(z=z(x,y)\), its derivatives are zero. Thus we obtain: <br>
+        \begin{align}
+        \frac{\partial F}{\partial u}\left(\frac{\partial z}{\partial x}\cdot\frac{1}{x}-z\cdot\frac{1}{x^2}\right) + \frac{\partial F}{\partial v}\left(-\frac{y}{x^2}\right) &= 0
+        \end{align}
+        
+        \begin{align}
+        \frac{\partial F}{\partial u}\left(\frac{\partial z}{\partial y}\cdot\frac{1}{x}\right) + \frac{\partial F}{\partial v}\left(\frac{1}{x}\right) &= 0
+        \end{align}
+    </p>
+    <p id="calc23_p1_b4" class="hidden">
+        (...)
+    </p>
+    <!-- cut: click "calc23_p1_b4" to show "calc23_p1_4" -->
+    <p id="calc23_p1_4" class="hidden">
+        Step 3: We don't know what are \(\frac{\partial F}{\partial u}\) and \(\frac{\partial F}{\partial v}\). Let's try eliminate them.         
+    </p>
+    <button id="calc23_p1_b5" class="warning-button">
+        (I have thought about it and I'm ready to see the final step.)
+    </button>
+    <p id="calc23_p1_5" class="hidden">
+        The easier one to eliminate would be \(\frac{\partial F}{\partial v}\). After elimination, we get:
+        \begin{align}
+        \frac{\partial F}{\partial u}\cdot\left(\frac{\partial z}{\partial x}\cdot\frac{1}{x}-z\cdot\frac{1}{x^2}+\frac{\partial z}{\partial y}\cdot\frac{y}{x^2}\right) &= 0
+        \end{align}
+        The second factor is what we are looking for.
+    </p>
+    <p id="calc23_p1_b6" class="hidden">
+        (collapse)
+    </p>
+</div>
+
+
+
+<div id="calc23_p2" class="hidden">
+    <br>
+    <hr>
+    <h2>
+        Calc 2023 Problem 2 (10pts)
+    </h2>
+    Evaluate <br>
+    (a)
+    \begin{align}
+        \lim_{n\rightarrow\infty}\sum_{p=0}^{n-1} \frac{n}{n^2+p^2}
+    \end{align}
+    (b)
+    \begin{align}
+        \lim_{n\rightarrow\infty} \left(1+\frac{3}{n}\right)^n
+    \end{align}
+</div>
+<div id="calc23_p3" class="hidden">
+    <br>
+    <hr>
+    <h2>
+        Calc 2023 Problem 3 (20pts)
+    </h2>
+    Find the maximum of
+    \begin{align}
+        \left(\sum_{i=1}^{n} a_ix_i\right)^2
+    \end{align}
+    subject to the condition
+    \begin{align}
+        \sum_{i=1}^{n} x_i^2 &= 1.
+    \end{align}
+    assume that \(a_i\neq 0\) for at least one \(i\).
+</div>
+<div id="calc23_p4" class="hidden">
+    <br>
+    <hr>
+    <h2>
+        Calc 2023 Problem 4 (15pts)
+    </h2>
+    For scalar functions \(\phi(r)\) and \(\psi(r)\) calculate
+    \begin{align}
+        \oint_C \phi\nabla\psi\cdot dr + \oint_C \psi\nabla\phi\cdot dr
+    \end{align}
+    where \(C\) is a three-dimensional smooth closed contour.
+</div>
+<div id="calc23_p5" class="hidden">
+    <br>
+    <hr>
+    <h2>
+        Calc 2023 Problem 5 (15pts)
+    </h2>
+    Consider the vector field \(F = (x,y,z)\) and contours \(C_{1,2}\). <br>
+    (a) Determine \(\int_C F\cdot dr\) for \(C_1\) given by \(r(t) = (\cos t, \sin t, t)\) with \(0\le t\le 2\pi\). Might this integral change when the contour \(C_2\) is used, which connects the end points of \(C_1\) directly with a straight line? Explain! <br>
+    (b) Determine \(\int_C F\cdot dr\) for the contour \(C_1\). Might this integral change when the contour \(C_2\) is used? Explain!
+</div>
+<div id="calc23_p6" class="hidden">
+    <br>
+    <hr>
+    <h2>
+        Calc 2023 Problem 6 (15pts)
+    </h2>
+    Maxwell's equations for a region of space with no electrical chargers and no electrical currents are given by
+    \begin{align*}
+        \text{div} E = 0\quad \text{div} H = 0 \quad\text{curl} E = -\frac{1}{c}\frac{\partial H}{\partial t} \quad\text{curl} H = \frac{1}{c}\frac{\partial E}{\partial t},
+    \end{align*}
+    where \(c\) is the speed of light. Use these equations to derive the wave equation
+    \begin{align*}
+        \nabla^2 E = \frac{1}{c^2}\frac{\partial^2 E}{\partial t^2} 
+    \end{align*}
+    for the electrical field \(E\).
+</div>
+<div id="calc23_p7" class="hidden">
+    <br>
+    <hr>
+    <h2>
+        Calc 2023 Problem 7 (20pts)
+    </h2>
+    Consider scalar functions \(f\) and \(g\). <br>
+    (a) Show that
+    \begin{align*}
+        \nabla\cdot(f\nabla g - g\nabla f) = f\nabla^2 g - g\nabla^2 f
+    \end{align*}
+    and use it to show that
+    \begin{align*}
+    <!-- ugly -->
+        \unicode{x222F} \left(f\frac{\partial g}{\partial n}-g\frac{\partial f}{\partial n}\right) dS - \iiint \left(f\nabla^2 g - g\nabla^2 f\right) dV
+    \end{align*}
+    where \(S\) is the surface of the volume \(V\) and \(n\) is the outward normal on the surface \(S\). <br>
+    (b) Use this result to show that for \(r = \sqrt{x^2+y^2+z^2}\)
+    \begin{align*}
+        \unicode{x222F} \left(\frac{1}{r}\nabla g-g\nabla(\frac{1}{r})\right)\cdot ndS = \iiint_V \frac{1}{r}\nabla^2 g dV + k
+    \end{align*}
+    where \(k = 4\pi g(0,0,0)\) if \(V\) encloses the origin and \(k=0\) otherwise.
+</div>
+
+<!-- <p onclick="toggleContent()">2022</p>
+<p onclick="toggleContent()">2021</p>
+<p onclick="toggleContent()">2020</p>
+<p onclick="toggleContent()">2019</p>
+<p onclick="toggleContent()">2018</p> -->
+<hr>
+
+<script>
+    document.getElementById("calc23").addEventListener("click",function(){
+        toggleContent(["calc23_p1","calc23_p2","calc23_p3","calc23_p4","calc23_p5","calc23_p6","calc23_p7"]);
+    });
+    // Problem 1
+    document.getElementById("calc23_p1_b2").addEventListener("click",function(){
+        showContent(["calc23_p1_2","calc23_p1_b3"]);
+    });
+    document.getElementById("calc23_p1_b3").addEventListener("click",function(){
+        showContent(["calc23_p1_3","calc23_p1_b4"]);
+        hideContent(["calc23_p1_b3"]);
+    });
+    document.getElementById("calc23_p1_b4").addEventListener("click",function(){
+        showContent(["calc23_p1_4","calc23_p1_b5"]);
+        hideContent(["calc23_p1_b4"]);
+    }); 
+    document.getElementById("calc23_p1_b5").addEventListener("click",function(){
+        showContent(["calc23_p1_5","calc23_p1_b6"]);
+        hideContent(["calc23_p1_b5"]);
+    }); 
+    document.getElementById("calc23_p1_b6").addEventListener("click",function(){
+        hideContent(["calc23_p1_2","calc23_p1_3","calc23_p1_4","calc23_p1_5","calc23_p1_b3","calc23_p1_b4","calc23_p1_b5","calc23_p1_b6"]);
+        document.getElementById("calc23_p1").scrollIntoView();
+    }); 
+    document.getElementById("calc23_p1_b1").addEventListener("click",function(){
+        showContent(["calc23_p1_2","calc23_p1_3","calc23_p1_4","calc23_p1_5","calc23_p1_b6"]);
+    }); 
+    
+
+    function toggleContent(names) {
+        for (let name of names){
+            var content = document.getElementById(name);
+            content.classList.toggle("hidden");
+            if (content.classList.contains("hidden")) {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    }
+    function hideContent(names) {
+        for (let name of names){
+            var content = document.getElementById(name);
+            content.style.display = "none";
+        }
+    }
+    function showContent(names) {
+        for (let name of names){
+            var content = document.getElementById(name);
+            content.style.display = "block";
+        }
+    }
+    // function toggleContentCal23() {
+    //     const calc_names = ["calc23_p1","calc23_p2","calc23_p3","calc23_p4","calc23_p5","calc23_p6","calc23_p7"];
+    //     for (let name of calc_names){
+    //         var content = document.getElementById(name);
+    //         content.classList.toggle("hidden");
+    //         if (content.classList.contains("hidden")) {
+    //             content.style.display = "none";
+    //         } else {
+    //             content.style.display = "block";
+    //         }
+    //     }
+    // }
+    // function toggleContentCal23P1S1() {
+    //     const calc_names = ["calc23_p1_1"];
+    //     for (let name of calc_names){
+    //         var content = document.getElementById(name);
+    //         content.classList.toggle("hidden");
+    //         if (content.classList.contains("hidden")) {
+    //             content.style.display = "none";
+    //         } else {
+    //             content.style.display = "block";
+    //         }
+    //     }
+    // }
+    // function toggleContentCal23P1S2() {
+    //     const calc_names = ["calc23_p1_2"];
+    //     for (let name of calc_names){
+    //         var content = document.getElementById(name);
+    //         content.classList.toggle("hidden");
+    //         if (content.classList.contains("hidden")) {
+    //             content.style.display = "none";
+    //         } else {
+    //             content.style.display = "block";
+    //         }
+    //     }
+    // }
+</script>
+
+<p>
+    acknowledgement
+</p>
+</html>
